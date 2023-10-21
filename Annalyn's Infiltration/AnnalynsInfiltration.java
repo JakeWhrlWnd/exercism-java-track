@@ -24,4 +24,14 @@ public class AnnalynsInfiltration {
     public static boolean canSpy(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake) {
         return knightIsAwake || archerIsAwake || prisonerIsAwake;
     }
+    /**
+     * Can signal prisoner if the prisoner is awake and the archer is sleeping
+     *
+     * @param archerIsAwake - negated boolean
+     * @param prisonerIsAwake - boolean
+     * @return if you can free the prisoner - boolean
+     */
+    public static boolean canSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
+        return !archerIsAwake && prisonerIsAwake;
+    }
 }
