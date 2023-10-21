@@ -12,7 +12,6 @@ public class AnnalynsInfiltration {
     public static boolean canFastAttack(boolean knightIsAwake) {
         return !knightIsAwake;
     }
-
     /**
      * Can spy if 1 of the characters is awake
      *
@@ -33,5 +32,19 @@ public class AnnalynsInfiltration {
      */
     public static boolean canSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
         return !archerIsAwake && prisonerIsAwake;
+    }
+    /**
+     * Two options for a solution - use of ||(OR) operator
+     * First option - Both the knight and archer are sleeping, and the prisoner is sneaky
+     * Second option - Archer is asleep and her dog is with her (The knight is scared of the dog)
+     *
+     * @param knightIsAwake - negated boolean
+     * @param archerIsAwake - negated boolean
+     * @param prisonerIsAwake - boolean
+     * @param petDogIsPresent - boolean
+     * @return If Annalyn can free the prisoner - boolean
+     */
+    public static boolean canFreePrisoner(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake, boolean petDogIsPresent) {
+        return (!knightIsAwake && !archerIsAwake && prisonerIsAwake) || (!archerIsAwake && petDogIsPresent);
     }
 }
