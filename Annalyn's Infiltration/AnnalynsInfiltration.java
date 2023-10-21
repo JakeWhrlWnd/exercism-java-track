@@ -13,4 +13,15 @@ public class AnnalynsInfiltration {
         return !knightIsAwake;
     }
 
+    /**
+     * Can spy if 1 of the characters is awake
+     *
+     * @param knightIsAwake - boolean
+     * @param archerIsAwake - boolean
+     * @param prisonerIsAwake - boolean
+     * @return if you can spy - boolean
+     */
+    public static boolean canSpy(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake) {
+        return knightIsAwake || archerIsAwake || prisonerIsAwake;
+    }
 }
