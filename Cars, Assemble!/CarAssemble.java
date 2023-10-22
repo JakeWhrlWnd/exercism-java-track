@@ -24,4 +24,24 @@ public class CarAssemble {
             return speed * 221;
         }
     }
+
+    /**
+     * A method that calculates the number of working items produced per minute
+     * Using the equations from the previous method - dividing them by 60 to get minutes
+     * Typecast to convert double to a returned int value
+     *
+     * @param speed - int
+     * @return typecast value (int) number of working items per minute
+     */
+    public int workingItemsPerMinute(int speed) {
+        if (speed == 10) {
+            return (int)(speed * (221 * 0.77)) / 60;
+        } else if (speed == 9) {
+            return (int)(speed * (221 * 0.8)) / 60;
+        } else if (speed >= 5 && speed <= 8) {
+            return (int)(speed * (221 * 0.9)) / 60;
+        } else {
+            return (speed * 221) / 60;
+        }
+    }
 }
