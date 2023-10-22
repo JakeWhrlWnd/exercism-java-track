@@ -17,7 +17,7 @@ public class BirdWatcher {
      * @return last week's count
      */
     public int[] getLastWeek() {
-        return this.birdsPerDay;
+        return birdsPerDay;
     }
 
     /**
@@ -34,7 +34,7 @@ public class BirdWatcher {
      *
      */
     public void incrementTodaysCount() {
-        ++this.birdsPerDay[size - 1];
+        ++birdsPerDay[size - 1];
     }
 
     /**
@@ -42,9 +42,42 @@ public class BirdWatcher {
      * @return true if the bird count is zero, false if the bird count is !0
      */
     public boolean hasDayWithoutBirds() {
-        for (int zeroDay : this.birdsPerDay) {
+        for (int zeroDay : birdsPerDay) {
             return zeroDay == 0;
         }
         return false;
+    }
+
+    /**
+     * Method to calculate the number of visiting birds for the first number of days
+     * @param numberOfDays - int
+     * @return total number of visiting birds
+     */
+    public int getCountForFirstDays(int numberOfDays) {
+        int total = 0;
+
+        if (numberOfDays > size) {
+            numberOfDays = size;
+        }
+        for (int i = 0; i < numberOfDays; i++) {
+            total += birdsPerDay[i];
+        }
+
+        return total;
+    }
+
+    /**
+     * Method to calculate days that had 5 or more bird visitors
+     * @return number of days with 5 or more sightings
+     */
+    public int getBusyDays() {
+        int count = 0;
+
+        for (int busyDays : birdsPerDay) {
+            if (busyDays >= 5) {
+                count++;
+            }
+        }
+        return count;
     }
 }
