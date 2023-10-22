@@ -2,6 +2,7 @@
  * Use code to analyze the production of an assembly line in a car factory.
  */
 public class CarAssemble {
+    public final int PRODUCED_CARS = 221;
     /**
      * A method that considers the current assembly line's speed and calculates the production rate per hour
      * At its lowest speed(1), 221 cars are produced each hour
@@ -12,16 +13,16 @@ public class CarAssemble {
     public double productionRatePerHour(int speed) {
         if (speed == 10) {
             //Speed 10 - 77% success rate
-            return speed * (221 * 0.77);
+            return speed * (PRODUCED_CARS * 0.77);
         } else if (speed == 9) {
             //Speed 9 - 80% success rate
-            return speed * (221 * 0.8);
+            return speed * (PRODUCED_CARS * 0.8);
         } else if (speed >= 5 && speed <= 8) {
             //Speed 5 to 8 - 90% success rate
-            return speed * (221 * 0.9);
+            return speed * (PRODUCED_CARS * 0.9);
         } else {
             //Speed 1 to 4 - 100% success rate
-            return speed * 221;
+            return speed * PRODUCED_CARS;
         }
     }
 
@@ -35,13 +36,13 @@ public class CarAssemble {
      */
     public int workingItemsPerMinute(int speed) {
         if (speed == 10) {
-            return (int)(speed * (221 * 0.77)) / 60;
+            return (int)(speed * (PRODUCED_CARS * 0.77)) / 60;
         } else if (speed == 9) {
-            return (int)(speed * (221 * 0.8)) / 60;
+            return (int)(speed * (PRODUCED_CARS * 0.8)) / 60;
         } else if (speed >= 5 && speed <= 8) {
-            return (int)(speed * (221 * 0.9)) / 60;
+            return (int)(speed * (PRODUCED_CARS * 0.9)) / 60;
         } else {
-            return (speed * 221) / 60;
+            return (speed * PRODUCED_CARS) / 60;
         }
     }
 }
