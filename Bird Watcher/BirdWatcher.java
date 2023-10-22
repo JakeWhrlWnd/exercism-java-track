@@ -5,16 +5,27 @@
  */
 public class BirdWatcher {
     private final int[] birdsPerDay; //Declaration of Array
+    private int size;
     //Constructor for the BirdWatcher Class
     public BirdWatcher(int[] birdsPerDay) {
         this.birdsPerDay = birdsPerDay.clone();
+        this.size = this.birdsPerDay.length;
     }
 
     /**
-     * Check what the counts were last week
-     * @return last weeks count as an Array
+     * Method to check the counts for last week
+     * @return last week's count
      */
     public int[] getLastWeek() {
         return this.birdsPerDay;
+    }
+
+    /**
+     * Method to check the count for today
+     * Using a ternary operator to condense the use of an if-else statement
+     * @return today's count
+     */
+    public int getToday() {
+        return size == 0 ? 0 : birdsPerDay[size - 1];
     }
 }
