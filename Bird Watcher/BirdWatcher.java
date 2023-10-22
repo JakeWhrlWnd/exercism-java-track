@@ -28,4 +28,23 @@ public class BirdWatcher {
     public int getToday() {
         return size == 0 ? 0 : birdsPerDay[size - 1];
     }
+
+    /**
+     * Method to increment today's count
+     *
+     */
+    public void incrementTodaysCount() {
+        ++this.birdsPerDay[size - 1];
+    }
+
+    /**
+     * Method to check for days with 0 bird visits
+     * @return true if the bird count is zero, false if the bird count is !0
+     */
+    public boolean hasDayWithoutBirds() {
+        for (int zeroDay : this.birdsPerDay) {
+            return zeroDay == 0;
+        }
+        return false;
+    }
 }
